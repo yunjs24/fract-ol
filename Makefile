@@ -6,26 +6,52 @@
 #    By: junsyun <junsyun@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 06:25:26 by junsyun           #+#    #+#              #
-#    Updated: 2022/10/03 06:29:51 by junsyun          ###   ########.fr        #
+#    Updated: 2022/10/06 18:35:59 by junsyun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= fractol
+NAME			= fractol
 
-CC		= gcc
-CFLAGS	= -Wextra -Werror -Wall
+RM				= rm -rf
 
-MLX_NAME	= libmlx.a
-MLX_PATH	= minilibx-linux/
-MLX			= $(MLX_PATH) $(MLX_NAME)
+CC				= cc
+FLAGS			= -Wextra -Werror -Wall
 
-LIBFT_PATH	= ./libft/
-LIBFT_NAME	= libft.a
-LIBFT		= $(LIBFT_PATH) $(LIBFTNAME)
+HEADERS     	= ./includes
+LIBFT       	= -L./libft -lft
+MLX				= -L./mlx -lmlx -framework OpenGL -framework AppKit
 
-INC			=	-I ./includes/\
-			=	-I ./libft/\
-			=	-I ./minilibx-linux/
+PATH_SRCS 		= src
+PATH_OBJS		= obj
 
-SRCS_PATH = ./src/
-SRCS	  = fractol.c
+C_FILE_NAME		= main.c		\
+				fractol.c			
+
+SRCS			= $(addprefix $(PATH_SRCS)/,$(C_FILE_NAME))
+OBJS        	= $(addprefix $(PATH_OBJS)/,$(C_FILE_NAME:.c=.o))
+
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+	@make -C ./libft
+	@make -C mlx
+	@$(CC) $(FLAGS) -o $(LIBFT) $@ $^ $(MLX)
+		
+
+$(PATH_OBJS)/%.o: $(PATH_SRCS)/%.c $(HEADERS)/$(NAME).h
+	@mkdir -p $(PATH_OBJS)
+	@$(CC) $(FLAGS) -I $(HEADERS) -c $< -o $@ 
+
+clean : 
+	@$(RM) $(PATH_OBJS)
+	@make clean -C ./libft
+	@make clean -C mlx
+	
+fclean : clean
+	@$(RM) $(NAME)
+	@make fclean -C ./libft
+re:
+	@make fclean
+	@make all
+
+.PHONY: all obj clean fclean re
