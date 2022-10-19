@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junsyun <junsyun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 18:30:38 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:35 by junsyun          ###   ########.fr       */
+/*   Created: 2022/10/19 18:14:54 by junsyun           #+#    #+#             */
+/*   Updated: 2022/10/19 19:05:57 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#ifndef ERROR_H
+# define ERROR_H
 
-void	err_exit(const char *msg)
-{
-	ft_putstr_fd(msg, STDERR_FILENO);
-	exit(1);
-}
+
+#endif
