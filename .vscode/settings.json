@@ -3,6 +3,7 @@
 		"fractol.h": "c",
 		"libft.h": "c",
 		"unistd.h": "c",
-		"types.h": "c"
+		"types.h": "c",
+		"bitset": "c"
 	}
 }
