@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   types.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/22 05:12:14 by junsyun           #+#    #+#             */
+/*   Updated: 2022/10/22 06:43:07 by junsyun          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TYPES_H
 # define TYPES_H
 
@@ -23,7 +35,7 @@ typedef struct s_fractol
 	void		*window;
 	t_image		*img;
 	char		*title;
-	int			set;
+	void		(*fp)(t_complex c, struct s_fractol *f);
 	t_complex	c;
 	double		x_max;
 	double		x_min;
@@ -32,6 +44,7 @@ typedef struct s_fractol
 	double		zoom;
 	int			color;
 	t_complex	julia;
+	int			iter_cnt;
 }				t_fractol;
 
 #endif
