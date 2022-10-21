@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:12:14 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 06:43:07 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/22 07:05:53 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_fractol
 	double		x_min;
 	double		y_max;
 	double		y_min;
-	double		zoom;
+	double		zoom_ratio;
 	int			color;
 	t_complex	julia;
 	int			iter_cnt;

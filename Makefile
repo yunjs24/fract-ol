@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: junsyun <junsyun@student.42.fr>            +#+  +:+       +#+         #
+#    By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 06:25:26 by junsyun           #+#    #+#              #
-#    Updated: 2022/10/19 18:59:05 by junsyun          ###   ########.fr        #
+#    Updated: 2022/10/22 06:38:26 by junsyun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ PATH_SRCS 		= src
 PATH_OBJS		= obj
 
 C_FILE_NAME		= main.c		\
-				fractol.c		\
+				fractol_sets.c		\
 				fractol_init.c	\
 				fractol_draw.c	\
 

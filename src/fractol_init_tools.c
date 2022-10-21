@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol_init_tools.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junsyun <junsyun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/19 23:08:20 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/22 07:28:07 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	image_init(t_fractol *f)
 	if (!f->img->ptr)
 		exit(1);
 	f->img->buff = (int *)mlx_get_data_addr(f->img->ptr, \
-		&f->img->bits_per_pixel, &f->img->line_length, &f->img_endian);
+		&f->img->bits_per_pixel, &(f->img->line_length), &(f->img->endian));
 	if (!f->img->buff)
 		exit(1);
 }
