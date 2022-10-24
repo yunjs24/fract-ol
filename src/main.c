@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junsyun <junsyun@student.42.fr>            +#+  +:+       +#+        */
+/*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:07:00 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/19 19:04:39 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:51:20 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ int	main(int ac, char *av[])
 
 	if (check_input(&f, ac, av))
 	{
-		if (!mlx_init(&f))
+		if (!fractol_mlx_init(&f))
 		{
 			print_manual("\n[error] : mlx_init() fail!\n");
 			exit(1);
 		}
+		// ft_putstr_fd("testtest\n", 1);
 		image_init(&f);
 		fractol_draw(&f);
 		mlx_loop(f.mlx);

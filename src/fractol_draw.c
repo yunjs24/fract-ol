@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 05:56:02 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:54:03 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	fractol_draw(t_fractol *f)
 {
 	int		x;
 	int		y;
-	void	*fp;
 
 	x = 0;
 	image_init(f);
@@ -37,7 +36,7 @@ void	fractol_draw(t_fractol *f)
 	mlx_destroy_image(f->mlx, f->img->ptr);
 }
 
-int	set_color_pixel(t_fractol *f, int x, int y)
+void	set_color_pixel(t_fractol *f, int x, int y)
 {
 	int	pixel;
 	int	color;
@@ -47,4 +46,5 @@ int	set_color_pixel(t_fractol *f, int x, int y)
 		color = 1;
 	pixel = (y * WIN_WIDTH + x);
 	f->img->buff[pixel] = ((f->iter_cnt * f->color) + 0x00000000) * color;
+	
 }

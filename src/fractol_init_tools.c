@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 07:32:29 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:49:45 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	fractol_init(t_fractol *f)
 {
 	f->color = 0x00000000;
-	f->zoom_ratio = 0.10;
+	f->zoom_ratio = 0.05;
 	if (f->fp == fractol_mandelbrot)
 	{
 		f->x_max = 1.5;
-		f->x_min = -2.0;
+		f->x_min = -2.5;
 		f->y_max = 2.0;
 		f->y_min = -2.0;
 	}
@@ -44,7 +44,7 @@ int		fractol_mlx_init(t_fractol *f)
 	if (!f->img)
 		return (0);
 	fractol_init(f);
-	mlx_key_hook(f->window, key_hook, f);
+	mlx_key_hook(f->window, key_move, f);
 	mlx_mouse_hook(f->window, mouse_hook, f);
 	return (1);
 }
@@ -56,7 +56,7 @@ void	image_init(t_fractol *f)
 	if (!f->img->ptr)
 		exit(1);
 	f->img->buff = (int *)mlx_get_data_addr(f->img->ptr, \
-		&f->img->bits_per_pixel, &(f->img->line_length), &(f->img->endian));
+		&f->img->bits_per_pixel, &f->img->line_length, &f->img->endian);
 	if (!f->img->buff)
 		exit(1);
 }

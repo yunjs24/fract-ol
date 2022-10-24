@@ -6,15 +6,16 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:30:38 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 05:52:24 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:33:12 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	print_manual(const char *msg)
+int	print_manual(char *msg)
 {
-	ft_putstr_fd(msg, STDERR_FILENO);
+	if (msg)
+		ft_putstr_fd(msg, STDERR_FILENO);
 	ft_putstr_fd("USAGE : ./fractol <type>\n\n", STDOUT_FILENO);
 	ft_putstr_fd("TYPES\n", STDOUT_FILENO);
 	ft_putstr_fd("\t1. julia\n", STDOUT_FILENO);
@@ -26,6 +27,7 @@ void	print_manual(const char *msg)
 	ft_putstr_fd("\tMouse\n", STDOUT_FILENO);
 	ft_putstr_fd("\tZoom : [Scroll]\n", STDOUT_FILENO);
 	ft_putstr_fd("\tchange color : [Left_Button]\n", STDOUT_FILENO);
+	return (1);
 }
 
 int		check_input(t_fractol *f, int ac, char *av[])
@@ -51,5 +53,5 @@ int		check_input(t_fractol *f, int ac, char *av[])
 	}
 	else
 		print_manual(NULL);
-	return (f->fp);
+	return (1);
 }

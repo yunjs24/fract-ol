@@ -6,14 +6,14 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:40:53 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 07:17:18 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:15:35 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 #include "../includes/keycode.h"
 
-void	key_move(int keycode, t_fractol *f)
+int	key_move(int keycode, t_fractol *f)
 {
 	if (keycode == KEY_UP)
 	{
@@ -39,5 +39,5 @@ void	key_move(int keycode, t_fractol *f)
 		f->x_max += f->zoom_ratio;
 		fractol_draw(f);
 	}
+	return (1);
 }
-

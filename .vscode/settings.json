@@ -4,6 +4,7 @@
 		"libft.h": "c",
 		"unistd.h": "c",
 		"types.h": "c",
-		"bitset": "c"
+		"bitset": "c",
+		"keycode.h": "c"
 	}
 }

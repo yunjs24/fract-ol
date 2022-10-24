@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   fractol_sets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:00:30 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 06:37:00 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:21:58 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include "../includes/types.h"
 
-void	ft_julia(t_complex c, t_fractol *f)
+void	fractol_julia(t_complex c, t_fractol *f)
 {
 	t_complex	z;
 	double		tmp;
@@ -55,6 +56,7 @@ void	fractol_mandelbrot(t_complex c, t_fractol *f)
 		z.y = t_xy + c.y;
 		i++;
 	}
+	f->iter_cnt = i;
 }
 
 void	fractol_burningship(t_complex c, t_fractol *f)
@@ -80,4 +82,5 @@ void	fractol_burningship(t_complex c, t_fractol *f)
 		z.y = -t_xy + c.y;
 		i++;
 	}
+	f->iter_cnt = i;
 }

@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 07:03:11 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 07:26:27 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 04:04:23 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ int	mouse_hook(int button, t_fractol *f, int x, int y)
 		change_color(f);
 		fractol_draw(f);
 	}
+	return (1);
 }
