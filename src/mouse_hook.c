@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 07:03:11 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:04:23 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 06:20:15 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ static	void zoom_in(t_fractol *f, double x, double y)
 	double	yy;
 	double	ratio;
 
-	ratio = 1.3;
+	ratio = 0.8;
 	xx = (((double)x / WIN_WIDTH) * (f->x_max - f->x_min)) + f->x_min;
 	yy = (((double)y / WIN_HEIGHT) * (f->y_max - f->y_min)) + f->y_min;
 	f->x_min = xx + ((f->x_min - xx) * ratio);
 	f->y_min = yy + ((f->y_min - yy) * ratio);
 	f->y_max = yy + ((f->y_max - yy) * ratio);
 	f->x_max = xx + ((f->x_max - xx) * ratio);
-	f->zoom_ratio = ratio;
+	// f->zoom_ratio = ratio;
 }
 
 static	void zoom_out(t_fractol *f, double x, double y)
@@ -35,7 +35,7 @@ static	void zoom_out(t_fractol *f, double x, double y)
 	double	yy;
 	double	ratio;
 
-	ratio = 0.7;
+	ratio = 1.2;
 	xx = (((double)x / WIN_WIDTH) * (f->x_max - f->x_min)) + f->x_min;
 	yy = (((double)y / WIN_HEIGHT) * (f->y_max - f->y_min)) + f->y_min;
 	f->x_min = xx + ((f->x_min - xx) * ratio);
@@ -50,7 +50,7 @@ static void	change_color(t_fractol *f)
 
 }
 
-int	mouse_hook(int button, t_fractol *f, int x, int y)
+int	mouse_hook(int button, int x, int y, t_fractol *f)
 {
 	if (button == M_SCROLL_UP)
 	{

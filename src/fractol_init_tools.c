@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:49:45 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 06:18:22 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	fractol_init(t_fractol *f)
 {
-	f->color = 0x00000000;
-	f->zoom_ratio = 0.05;
+	f->color = 0x00008db8;
+	f->zoom_ratio = 0.03;
 	if (f->fp == fractol_mandelbrot)
 	{
 		f->x_max = 1.5;
@@ -44,7 +44,7 @@ int		fractol_mlx_init(t_fractol *f)
 	if (!f->img)
 		return (0);
 	fractol_init(f);
-	mlx_key_hook(f->window, key_move, f);
+	mlx_key_hook(f->window, key_hook, f);
 	mlx_mouse_hook(f->window, mouse_hook, f);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:40:53 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:15:35 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 06:04:26 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,18 @@ int	key_move(int keycode, t_fractol *f)
 		f->x_max += f->zoom_ratio;
 		fractol_draw(f);
 	}
+	return (1);
+}
+
+int	key_hook(int keycode, t_fractol *f)
+{
+	if (keycode == KEY_ESC)
+	{
+		ft_putstr_fd("EXIT by ESC!\n", 1);
+		free(f->img);
+		exit(0);
+	}
+	else
+		key_move(keycode, f);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:54:03 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 06:20:15 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ void	fractol_draw(t_fractol *f)
 	while (x < WIN_WIDTH)
 	{
 		y = 0;
-		f->c.x = f->x_min + x * ((f->x_max - f->x_min)/ WIN_WIDTH);
+		f->c.x = f->x_min + x * ((f->x_max - f->x_min) / WIN_WIDTH);
+		// ft_putstr_fd("befor set_color_pixel()\n", 1);
+		// ft_putnbr_fd(x, 1);
+		// ft_putstr_fd(" ", 1);
 		while (y < WIN_HEIGHT)
 		{
 			f->c.y = f->y_min + y * ((f->y_max - f->y_min) / WIN_HEIGHT);
 			f->fp(f->c, f);
+			set_color_pixel(f, x, y);
 			y++;
-			/*setting about fixel color*/
 		}
 		x++;
 	}
@@ -45,6 +48,6 @@ void	set_color_pixel(t_fractol *f, int x, int y)
 	if (f->iter_cnt != N)
 		color = 1;
 	pixel = (y * WIN_WIDTH + x);
-	f->img->buff[pixel] = ((f->iter_cnt * f->color) + 0x00000000) * color;
+	f->img->buff[pixel] = ((f->iter_cnt * f->color) + 0x00F0F8FF) * color;
 	
 }

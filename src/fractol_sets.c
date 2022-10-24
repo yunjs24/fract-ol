@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:00:30 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:21:58 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 06:26:01 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	fractol_julia(t_complex c, t_fractol *f)
 	}
 	f->iter_cnt = i;
 }
-
 
 void	fractol_mandelbrot(t_complex c, t_fractol *f)
 {
@@ -77,9 +76,10 @@ void	fractol_burningship(t_complex c, t_fractol *f)
 		t_y = z.y * z.y;
 		if (t_x + t_y >= 4)
 			break ;
-		t_x -= t_y;
-		z.x = t_x + c.x;
-		z.y = -t_xy + c.y;
+		if (t_xy < 0)
+			t_xy *= -1;
+		z.x = t_x - t_y + c.x;
+		z.y = t_xy + c.y;
 		i++;
 	}
 	f->iter_cnt = i;

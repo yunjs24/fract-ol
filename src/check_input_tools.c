@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:30:38 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 04:33:12 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/25 05:00:54 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ int		check_input(t_fractol *f, int ac, char *av[])
 	}
 	else
 		print_manual(NULL);
-	return (1);
+	if (f->fp)
+		return (1);
+	return 0;
 }
