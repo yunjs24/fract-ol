@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:00:30 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 06:26:01 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:18:39 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,23 @@
 void	fractol_julia(t_complex c, t_fractol *f)
 {
 	t_complex	z;
-	double		tmp;
+	double		t_xy;
+	double		r;
 	int			i;
 
 	i = 0;
 	z.x = c.x;
 	z.y = c.y;
-	while (i < N && (z.x * z.x) + (z.y * z.y) < 4)
+	while (i < ITER_MAX && (z.x * z.x) + (z.y * z.y) < 4)
 	{
-		tmp = z.x;
-		z.x = (z.x * z.x) - (z.y * z.y) + f->julia.x;
-		z.y = (2 * tmp * z.y) + f->julia.y;
+		z.x *= z.x;
+		z.y *= z.y;
+		r = z.x + z.y;
+		if (r < 4)
+			break ;
+		t_xy = z.x;
+		z.x = (z.x - z.y) + f->julia.x;
+		z.y = (2 * t_xy * z.y) + f->julia.y;
 		i++;
 	}
 	f->iter_cnt = i;
@@ -43,7 +49,7 @@ void	fractol_mandelbrot(t_complex c, t_fractol *f)
 	z.x = c.x;
 	z.y = c.y;
 	i = 0;
-	while (i < N)
+	while (i < ITER_MAX)
 	{
 		t_xy = 2 * z.x * z.y;
 		t_x = z.x * z.x;
@@ -69,7 +75,7 @@ void	fractol_burningship(t_complex c, t_fractol *f)
 	z.x = c.x;
 	z.y = c.y;
 	i = 0;
-	while (i < N)
+	while (i < ITER_MAX)
 	{
 		t_xy = 2 * z.x * z.y;
 		t_x = z.x * z.x;

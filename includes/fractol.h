@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:10:18 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 06:27:31 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:18:25 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIN_WIDTH	800
 # define WIN_HEIGHT	800
-# define N			1000
+# define ITER_MAX	1000
 
 /*for checking input arguments*/
 int		check_input(t_fractol *f, int ac, char *av[]);

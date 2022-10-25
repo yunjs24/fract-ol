@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:30:38 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 05:00:54 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:09:46 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	print_manual(char *msg)
 	return (1);
 }
 
-int		check_input(t_fractol *f, int ac, char *av[])
+int	check_input(t_fractol *f, int ac, char *av[])
 {
 	f->fp = NULL;
 	if (ac >= 2)
@@ -55,5 +55,5 @@ int		check_input(t_fractol *f, int ac, char *av[])
 		print_manual(NULL);
 	if (f->fp)
 		return (1);
-	return 0;
+	return (0);
 }

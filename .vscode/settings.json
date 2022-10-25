@@ -6,6 +6,12 @@
 		"types.h": "c",
 		"bitset": "c",
 		"keycode.h": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"algorithm": "c",
+		"array": "c",
+		"iterator": "c",
+		"memory": "c",
+		"ratio": "c",
+		"utility": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 06:18:22 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:16:18 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	fractol_init(t_fractol *f)
 	}
 }
 
-int		fractol_mlx_init(t_fractol *f)
+int	fractol_mlx_init(t_fractol *f)
 {
 	f->mlx = mlx_init();
 	if (!f->mlx)

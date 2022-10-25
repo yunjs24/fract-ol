@@ -6,14 +6,14 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 07:03:11 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 06:20:15 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:17:43 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 #include "../includes/keycode.h"
 
-static	void zoom_in(t_fractol *f, double x, double y)
+static void	zoom_in(t_fractol *f, double x, double y)
 {
 	double	xx;
 	double	yy;
@@ -26,10 +26,9 @@ static	void zoom_in(t_fractol *f, double x, double y)
 	f->y_min = yy + ((f->y_min - yy) * ratio);
 	f->y_max = yy + ((f->y_max - yy) * ratio);
 	f->x_max = xx + ((f->x_max - xx) * ratio);
-	// f->zoom_ratio = ratio;
 }
 
-static	void zoom_out(t_fractol *f, double x, double y)
+static void	zoom_out(t_fractol *f, double x, double y)
 {
 	double	xx;
 	double	yy;

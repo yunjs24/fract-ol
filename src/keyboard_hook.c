@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:40:53 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/25 06:04:26 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:16:42 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	key_move(int keycode, t_fractol *f)
 	if (keycode == KEY_UP)
 	{
 		f->y_min -= f->zoom_ratio;
-		f->y_max -= f->zoom_ratio; 
+		f->y_max -= f->zoom_ratio;
 		fractol_draw(f);
 	}
 	else if (keycode == KEY_DOWN)
