@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:30:38 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:09:46 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:13:44 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,14 @@ int	print_manual(char *msg)
 	ft_putstr_fd("\tchange color : [Left_Button]\n", STDOUT_FILENO);
 	return (1);
 }
-
+#include <stdio.h>
 int	check_input(t_fractol *f, int ac, char *av[])
 {
 	f->fp = NULL;
-	if (ac >= 2)
+	printf("ac : %d\n", ac);
+	if (ac == 1)
+		print_manual(NULL);
+	else if (ac >= 2)
 	{
 		f->title = av[1];
 		if (!ft_strcmp(f->title, "mandelbrot"))
@@ -50,9 +53,9 @@ int	check_input(t_fractol *f, int ac, char *av[])
 		{
 			f->fp = fractol_burningship;
 		}
+		else
+			print_manual(NULL);
 	}
-	else
-		print_manual(NULL);
 	if (f->fp)
 		return (1);
 	return (0);

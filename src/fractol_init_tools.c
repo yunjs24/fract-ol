@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:16:18 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 10:17:14 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,19 @@ int	fractol_mlx_init(t_fractol *f)
 	return (1);
 }
 
-/**todo : image error message**/
 void	image_init(t_fractol *f)
 {
 	f->img->ptr = mlx_new_image(f->mlx, WIN_WIDTH, WIN_HEIGHT);
 	if (!f->img->ptr)
+	{
+		ft_putstr_fd("[Error] mlx image create Fail!\n", 2);
 		exit(1);
+	}
 	f->img->buff = (int *)mlx_get_data_addr(f->img->ptr, \
 		&f->img->bits_per_pixel, &f->img->line_length, &f->img->endian);
 	if (!f->img->buff)
+	{
+		ft_putstr_fd("[Error] mlx get image address Fail!\n", 2);
 		exit(1);
+	}
 }

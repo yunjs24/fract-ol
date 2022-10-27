@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:21:22 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:16:05 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:50:49 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void	set_color_pixel(t_fractol *f, int x, int y)
 	if (f->iter_cnt != ITER_MAX)
 		color = 1;
 	pixel = (y * WIN_WIDTH + x);
-	f->img->buff[pixel] = ((f->iter_cnt * f->color) + 0x00F0F8FF) * color;
+	f->img->buff[pixel] = ((f->iter_cnt * f->color) + 0x00F8F8F8) * color;
 }

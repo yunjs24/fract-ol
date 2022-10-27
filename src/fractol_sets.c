@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:00:30 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:18:39 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:05:23 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	fractol_julia(t_complex c, t_fractol *f)
 {
 	t_complex	z;
 	double		t_xy;
-	double		r;
 	int			i;
 
 	i = 0;
@@ -25,14 +24,13 @@ void	fractol_julia(t_complex c, t_fractol *f)
 	z.y = c.y;
 	while (i < ITER_MAX && (z.x * z.x) + (z.y * z.y) < 4)
 	{
+		t_xy = 2 * z.x * z.y;
 		z.x *= z.x;
 		z.y *= z.y;
-		r = z.x + z.y;
-		if (r < 4)
+		if (z.x + z.y >= 4)
 			break ;
-		t_xy = z.x;
 		z.x = (z.x - z.y) + f->julia.x;
-		z.y = (2 * t_xy * z.y) + f->julia.y;
+		z.y = (t_xy) + f->julia.y;
 		i++;
 	}
 	f->iter_cnt = i;

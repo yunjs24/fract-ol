@@ -6,7 +6,7 @@
 #    By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 06:25:26 by junsyun           #+#    #+#              #
-#    Updated: 2022/10/25 04:51:56 by junsyun          ###   ########.fr        #
+#    Updated: 2022/10/27 23:25:47 by junsyun          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@
 NAME            = fractol
 
 CC              = cc
-FLAGS			= -O3  -g -fsanitize=address
+FLAGS			= -O3 -Wall -Wextra -Werror -Imlx -g -fsanitize=address
 RM              = rm -rf
 
 HEADERS         = includes
 LIBFT           = -L./libft -lft
-MLX				= -L./mlx -lmlx -framework OpenGL -framework AppKit
+MLX				= -lmlx -framework OpenGL -framework AppKit
 
 DIR_S 			= src
 DIR_O			= obj
@@ -39,7 +39,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@make -C libft
-	@make -C mlx
+	# @make -C mlx
 	@$(CC) $(FLAGS) -o $@ $^ $(LIBFT) $(MLX)
 		
 
@@ -50,7 +50,7 @@ $(DIR_O)/%.o: $(DIR_S)/%.c $(HEADERS)/$(NAME).h
 clean : 
 	@$(RM) $(DIR_O)
 	@make clean -C libft
-	@make clean -C mlx
+	# @make clean -C mlx
 	
 fclean : clean
 	@$(RM) $(NAME)

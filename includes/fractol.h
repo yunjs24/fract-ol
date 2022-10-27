@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:10:18 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:18:25 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/27 23:09:48 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include <mlx.h>
 # include "types.h"
 
-# define WIN_WIDTH	800
-# define WIN_HEIGHT	800
+# define WIN_WIDTH	600
+# define WIN_HEIGHT	600
 # define ITER_MAX	1000
 
 /*for checking input arguments*/
@@ -43,4 +43,5 @@ void	fractol_burningship(t_complex c, t_fractol *f);
 int		key_move(int keycode, t_fractol *f);
 int		key_hook(int keycode, t_fractol *f);
 int		mouse_hook(int button, int x, int y, t_fractol *f);
+int		mouse_move(int x, int y, t_fractol *f);
 #endif

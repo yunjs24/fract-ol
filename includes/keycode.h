@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:46:46 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/22 06:44:40 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 09:59:23 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /* keyboard codes */
 # define KEY_ESC		53
 # define KEY_ENTER		36
+# define KEY_SPACE		49
 # define KEY_UP			126
 # define KEY_DOWN		125
 # define KEY_LEFT		123

@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 06:40:53 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:16:42 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 10:07:15 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	key_hook(int keycode, t_fractol *f)
 	if (keycode == KEY_ESC)
 	{
 		ft_putstr_fd("EXIT by ESC!\n", 1);
-		free(f->img);
+		mlx_destroy_window(f->mlx, f->window);
 		exit(0);
 	}
 	else

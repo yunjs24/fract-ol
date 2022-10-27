@@ -6,7 +6,7 @@
 /*   By: junsyun <junsyun@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 07:03:11 by junsyun           #+#    #+#             */
-/*   Updated: 2022/10/26 01:17:43 by junsyun          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:04:04 by junsyun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,11 @@ static void	zoom_out(t_fractol *f, double x, double y)
 	f->y_min = yy + ((f->y_min - yy) * ratio);
 	f->y_max = yy + ((f->y_max - yy) * ratio);
 	f->x_max = xx + ((f->x_max - xx) * ratio);
-	f->zoom_ratio = ratio;
 }
 
 static void	change_color(t_fractol *f)
 {
-
+	f->color += 525456;
 }
 
 int	mouse_hook(int button, int x, int y, t_fractol *f)
